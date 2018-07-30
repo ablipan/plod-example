@@ -1,1 +1,1 @@
-You said {{ greeting }}.
+You said "{{ greeting }}".

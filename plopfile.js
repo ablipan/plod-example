@@ -1,6 +1,5 @@
 module.exports = function (plop) {
-  const templatePath =
-  // the default generator
+  // default generator
   plop.setGenerator('default', {
     description: 'This is a plod example.',
     prompts: [
@@ -8,16 +7,14 @@ module.exports = function (plop) {
         type: 'input',
         name: 'greeting',
         message: 'Speak something:',
-        validate: function (value) {
-          if (value) return true
-          return 'Please say something.'
-        }
+        default: 'Hello everyone.'
       }
     ],
     actions: [
       {
         type: 'add',
-        path: process.cwd(),
+        path: process.cwd() + '/hello.txt',
+        force: true,
         templateFile: plop.getPlopfilePath() + '/template/hello.txt'
       }
     ]
